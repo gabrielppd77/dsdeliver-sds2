@@ -98,6 +98,14 @@ public class Order implements Serializable{
 	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
+	
+	public Double getTotal() {
+		double sum = 0.0;
+		for(Product p: products) {
+			sum += p.getPrice();
+		}
+		return sum;
+	}
 
 	public Set<Product> getProducts() {
 		return products; // O SET PRODUCTS Foi RETIRADO POIS NOS NUNCA VAMOS ALTERAR A COLEÇÃO APENAS ADICIONAR OU REMOVER INTENS DA MESMA
